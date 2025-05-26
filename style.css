@@ -1,0 +1,145 @@
+:root {
+  --bg: #0e0e11;
+  --card: #1e1f26;
+  --text: #ffffff;
+  --input: #2b2d3a;
+  --accent: #5865f2;
+  --accent-hover: #4752c4;
+  --error: #ff4d4d;
+  --success: #4dff88;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  padding: 20px;
+}
+
+.top-left {
+  position: fixed;
+  top: 16px;
+  left: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #888;
+  letter-spacing: 1px;
+  background-color: rgba(255,255,255,0.03);
+  padding: 6px 10px;
+  border-radius: 8px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+
+.form-card {
+  background: var(--card);
+  padding: 40px 30px;
+  border-radius: 16px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+  animation: pop-in 0.6s ease;
+  transition: all 0.3s ease;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 28px;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #aaa;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  background: var(--input);
+  border: none;
+  border-radius: 8px;
+  color: var(--text);
+  margin-bottom: 16px;
+  transition: background 0.2s;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  background: #383b50;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: var(--accent-hover);
+}
+
+.message {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.message.error {
+  color: var(--error);
+}
+
+.message.success {
+  color: var(--success);
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* meglévő stílusok megtartása... */
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #1a1b23;
+  color: #888;
+  text-align: center;
+  padding: 12px 0;
+  font-size: 13px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 99;
+}
